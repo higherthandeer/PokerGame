@@ -1,10 +1,14 @@
 # PokerGame
 
-一个基于 Cocos2d-x 的扑克牌消除游戏。
+基于 Cocos2d-x 的扑克牌消除游戏。
+
+## 开发动机
+
+redinfinity.net红海无线测试Demo
 
 ## 游戏简介
 
-这是一个卡牌匹配消除游戏，玩家需要点击桌面上的卡牌，与手牌进行匹配消除。
+卡牌匹配消除游戏，玩家需要点击桌面上的卡牌，与手牌进行匹配消除。
 
 ## 技术栈
 
@@ -42,24 +46,6 @@ PokerGame/
 - Visual Studio 2019 或更高版本
 - CMake 3.6+
 - Git
-
-### macOS
-
-- Xcode
-- CMake 3.6+
-- Git
-
-### Linux
-
-- GCC 9+ 或 Clang 10+
-- CMake 3.6+
-- Git
-- 相关开发库：
-  ```bash
-  sudo apt-get install libgl1-mesa-dev
-  sudo apt-get install libglu1-mesa-dev
-  sudo apt-get install libglfw3-dev
-  ```
 
 ## 编译和运行
 
