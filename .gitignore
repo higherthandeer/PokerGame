@@ -1,0 +1,62 @@
+# =========================
+# 1. 编译产生的巨型垃圾 (必须屏蔽!)
+# =========================
+# 调试符号和预编译头 (刚才报错的罪魁祸首)
+*.pdb
+*.pch
+*.idb
+*.ilk
+*.exp
+*.obj
+*.lib
+*.dll
+*.exe
+
+# =========================
+# 2. 各种构建目录 (一网打尽)
+# =========================
+# CMake 生成的构建目录
+build/
+build_win32/
+out/
+bin/
+
+# Visual Studio 旧版构建目录 (藏在 proj.win32 或 cocos2d 里的)
+Debug.win32/
+Release.win32/
+x64/
+x86/
+
+# =========================
+# 3. Visual Studio 工程与缓存
+# =========================
+.vs/
+*.suo
+*.user
+*.sdf
+*.ipch
+*.opensdf
+*.ncb
+
+# 忽略生成的工程文件 (sln/vcxproj)，因为我们要用 CMake 重新生成
+*.sln
+*.slnx
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+
+# =========================
+# 4. CMake 临时文件
+# =========================
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+
+# =========================
+# 5. 系统垃圾
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
