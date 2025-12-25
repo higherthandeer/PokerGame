@@ -4,7 +4,7 @@
 
 ## 开发动机
 
-redinfinity.net红海无线测试Demo
+redinfinity.net红海无限测试Demo
 
 ## 游戏简介
 
