@@ -234,7 +234,7 @@ void GameController::executeUndo(const UndoRecord& record) {
     }
 
     // 播放回退动画
-    _gameView->playUndoAnimation(record.cardId, record.fromPos, [this]() {
+    _gameView->playUndoAnimation(record.cardId, record.fromPos, record.fromArea, [this]() {
         updateUndoButton();
         });
 }

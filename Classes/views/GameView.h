@@ -69,7 +69,7 @@ public:
      * @param targetPos 目标位置
      * @param callback 动画完成回调
      */
-    void playUndoAnimation(int cardId, Vec2 targetPos, std::function<void()> callback = nullptr);
+    void playUndoAnimation(int cardId, Vec2 targetPos, CardArea fromArea, std::function<void()> callback = nullptr);
 
     /**0
      * @brief 播放卡牌抖动动画（无法匹配时）

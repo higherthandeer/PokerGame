@@ -255,7 +255,7 @@ void GameView::playDrawFromReserveAnimation(int cardId, Vec2 targetPos, std::fun
         });
 }
 
-void GameView::playUndoAnimation(int cardId, Vec2 targetPos, std::function<void()> callback) {
+void GameView::playUndoAnimation(int cardId, Vec2 targetPos, CardArea fromArea, std::function<void()> callback) {
     CCLOG("GameView: Playing undo animation for card %d", cardId);
 
     CardView* cardView = findCardViewById(cardId);
@@ -264,32 +264,24 @@ void GameView::playUndoAnimation(int cardId, Vec2 targetPos, std::function<void(
         if (callback) callback();
         return;
     }
-    // 先retain保持对象存活,再从手牌区移除
+    // 先 retain 保持对象存活，再从手牌区移除
     cardView->retain();
 
     // 从手牌区移除
     _baseStackView->removeCard(cardView);
 
-    // 根据目标位置判断要移动到哪个区域
-    // 简化处理：如果 y > 500，移到桌面牌区，否则移到备用牌堆
-    bool toPlayfield = targetPos.y > 500;
-
-    if (toPlayfield) {
-        cardView->retain();
+    if (fromArea == CardArea::PLAYFIELD) {
         cardView->setPosition(targetPos);
         _playfieldView->addCard(cardView);
-        cardView->release();
-
-        if (callback) callback();
     }
     else {
-        cardView->retain();
         cardView->setPosition(Vec2(0, 0));
         _reserveStackView->addCard(cardView);
-        cardView->release();
-
-        if (callback) callback();
     }
+
+    cardView->release();
+
+    if (callback) callback();
 }
 
 void GameView::playCardShakeAnimation(int cardId) {
